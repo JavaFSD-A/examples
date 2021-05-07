@@ -1,0 +1,47 @@
+<form (ngSubmit)="saveTodo()" #addfrm=ngForm>
+    <table class="table table-dark">
+        <tr><td>Task</td>
+            <td><input [(ngModel)]="todo.task" name="task" required #task='ngModel'
+                placeholder="Enter Task">
+                <span *ngIf="task.invalid" class="alert-danger">
+                  Task is required
+                </span></td>
+              </tr>
+      <tr><td>Assign Date</td>
+          <td><input [(ngModel)]="todo.assign_date" name="addign_date" #assign_date='ngModel' required
+              placeholder="Enter assign date" />
+                <span *ngIf="assign_date.invalid" class="alert-danger">
+                  Assign date  is required
+                </span></td></tr>
+        <tr><td>Finish Date</td>
+                <td><input [(ngModel)]="todo.finish_date" name="finish_date" #finish_date='ngModel' required
+                    placeholder="Enter finish date" />
+                      <span *ngIf="finish_date.invalid" class="alert-danger">
+                        Finish date  is required
+                      </span></td></tr>
+    <tr><td>Category</td>
+        <td><select [(ngModel)]="todo.category" name="category" #categories='ngModel' required>
+                <option *ngFor="let c of category" [value]="c">{{c}}</option>
+            </select>
+        </td></tr>
+        <tr><td>Priorities</td>
+            <td><select [(ngModel)]="todo.priority" name="priority" #priorities='ngModel' required>
+                    <option *ngFor="let p of priority" [value]="p">{{p}}</option>
+                </select>
+            </td></tr>
+        <!-- <tr><td>Status</td>
+                <td><select [(ngModel)]="todo.status" name="status" #status='ngModel' required>
+                        <option *ngFor="let s of status" [value]="s">{{s}}</option>
+                    </select>
+                </td></tr> -->
+        
+            <tr><th colspan="2">
+                <button type="submit" class="btn btn-success" [disabled]=!addfrm.valid >Save Task</button>
+            </th></tr>
+    </table>
+</form>
+<!-- <div [hidden]="!submitted">
+Title: {{album.title}}<br>
+Artist: {{album.artist}}<br>
+Genre: {{album.genre}}
+</div> -->

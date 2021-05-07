@@ -1,0 +1,26 @@
+<button class="btn btn-success" (click)="getTodoByUserId()">Show Todos</button>
+<br><br><br>
+
+<div [hidden]=!found>
+<table class="table table-dark">
+    <tr>
+        <th>Todo id</th>
+        <th>Task</th>
+        <th>category</th>
+        <th>status</th>
+        <th >Assign date</th>
+        <th>Finish date</th>
+        
+    
+    </tr>
+    <tr *ngFor=" let todo1 of todos;">
+        <td>{{ todo1.id }}</td>
+        <td>{{ todo1.task }}</td>
+        <td>{{ todo1.category }}</td>
+        <td>{{ todo1.status }}</td>
+        <td>{{ todo1.assignDate }}</td>
+        <td>{{ todo1.finishDate }}</td>
+        <td><button class="btn btn-warning" (click)="delete(todo1.id)">Delete</button></td>
+    </tr>
+</table>
+</div>

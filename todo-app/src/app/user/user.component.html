@@ -1,0 +1,31 @@
+<form (ngSubmit)="saveUser()" #addfrm=ngForm>
+    <table class="table table-dark">
+        <tr><td>Name</td>
+            <td><input [(ngModel)]="user.name" name="name" required #name='ngModel'
+                placeholder="Enter name">
+                <span *ngIf="name.invalid" class="alert-danger">
+                  Name is required
+                </span></td>
+              </tr>
+      <tr><td>Email</td>
+          <td><input [(ngModel)]="user.email" name="email" #email='ngModel' required
+              placeholder="Enter email id" />
+                <span *ngIf="email.invalid" class="alert-danger">
+                 email  is required
+                </span></td></tr>
+        <tr><td> Password</td>
+                <td><input [(ngModel)]="user.passwd" name="passwd" #passwd='ngModel' required
+                    placeholder="Enter password " />
+                      <span *ngIf="passwd.invalid" class="alert-danger">
+                        Password is required
+                      </span></td></tr>
+                      <tr><th colspan="2">
+                        <button type="submit" class="btn btn-success" [disabled]=!addfrm.valid >Save User</button>
+                    </th></tr>
+    </table>
+</form>
+<!-- <div [hidden]="!submitted">
+Title: {{album.title}}<br>
+Artist: {{album.artist}}<br>
+Genre: {{album.genre}}
+</div> -->

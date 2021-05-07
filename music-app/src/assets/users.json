@@ -1,0 +1,17 @@
+[
+    {
+        "userid":"duke",
+        "passwd":"java",
+        "role" :"Admin"
+    },
+    {
+        "userid":"mango",
+        "passwd":"cherry",
+        "role" :"User"
+    },
+    {
+        "userid":"abd",
+        "passwd":"abc",
+        "role" :"Guest"
+    }
+]
